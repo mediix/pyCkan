@@ -1,5 +1,5 @@
 """
-Python package to fetch datasets via CKAN API.
+Python package to fetch London Datastore datasets via CKAN API.
 
 See:
 https://github.com
@@ -41,9 +41,9 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'ckan-fetch' = '',
-            'ckan-update' = '',
-            'ckan-verify' = '',
+            'ckan_fetch = src.main.python.cmd:ckan_fetch',
+            'ckan_update = src.main.python.cmd:ckan_update',
+            'ckan_verify = src.main.python.cmd:ckan_verify',
         ],
     },
 )
