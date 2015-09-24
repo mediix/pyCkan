@@ -1,8 +1,9 @@
+import __builtin__
 import argparse
-from DB import set_connection
+from database import set_connection
 
-def ckan_fetch():
-    """Entry point to establish mysql conneciton."""
+def main():
+    """Entry point to establish mysql conneciton"""
     parser = argparse.ArgumentParser(prog='pydev')
     parser.add_argument('-u', nargs='?', help='username', type=str, default='')
     parser.add_argument('-p', nargs='?', help='password', type=str, default='')
@@ -16,9 +17,23 @@ def ckan_fetch():
         return
 
     try:
-        engine = set_connection(args.u, args.p, args.s, args.d)
-        connection = engine.connect()
+        con = set_connection(args.u, args.p, args.s, args.d)
+        __builtin__.con = con
     except Exception as err:
         raise ValueError(err)
     else:
         print "Connection successfully established."
+
+def ckan_fetch():
+    """
+    """
+
+
+
+# def ckan_update():
+#     """
+#     """
+
+# def ckan_verify():
+#     """
+#     """

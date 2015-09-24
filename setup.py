@@ -15,11 +15,11 @@ with open(path.join(here, 'DESCRIPTION.rst'), encoding='utf-8') as f:
     long_description = f.read()
 
 setup(
-    name='pyCkan',
+    name='pyCKAN',
     version='0.1',
-    description='A simple ckan dataset fetch project',
+    description='Python Package to Fetch London Datastore Datasets via CKAN API',
     long_description=long_description,
-    url='https://github.com/pypa/sampleproject',
+    url='https://github.com/mediix/pyCkan.git',
     author='Mehdi Nazari',
     author_email='mnazari@gvhomes.com',
     license='MIT',
@@ -41,6 +41,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
+            'ckan = src.main.python.cmd:main',
             'ckan_fetch = src.main.python.cmd:ckan_fetch',
             'ckan_update = src.main.python.cmd:ckan_update',
             'ckan_verify = src.main.python.cmd:ckan_verify',
